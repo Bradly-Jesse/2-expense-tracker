@@ -1,7 +1,8 @@
 import './App.css';
 
-import MainHeader from './components/common/MainHeader';
-import Balance from './components/common/Balance'
+import MainHeader from './components/UI/atoms/MainHeader';
+import Balance from './components/UI/atoms/Balance'
+import IncomeExpense from './components/UI/molecules/IncomeExpense';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <MainHeader string='Expense Tracker' />
       <div className="balance-container">
         <Balance state='0.00' />
+        <IncomeExpense />
       </div>
     </div>
   );
