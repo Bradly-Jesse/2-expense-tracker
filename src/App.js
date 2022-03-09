@@ -1,9 +1,11 @@
 import './App.css';
 
+import MainHeader from './components/common/MainHeader';
+
 function App() {
   return (
     <div className="App">
-      Expense Tracker Works!
+      <MainHeader string='Expense Tracker'/>
     </div>
   );
 }
