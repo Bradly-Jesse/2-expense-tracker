@@ -110,3 +110,17 @@ button{
 section{
   padding:4% 0;
 }
+
+.app{
+  display: flex;
+}
+
+.tracker{
+  width: 100%;
+  height: 100%;
+  background-color: #FBFFFB;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
