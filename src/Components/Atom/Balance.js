@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function Balance({balance,expenses}) {
+export default function Balance() {
   return (
-    <div>
-      <h1 style={{color: "green"}} >{balance}</h1>
-      <h1 style={{color: "red"}} >{expenses}</h1>
-    </div>
+    <>
+    <h4>Balance</h4>
+    <h1 id="balance">$0.00</h1>
+    </>
   )
 }
