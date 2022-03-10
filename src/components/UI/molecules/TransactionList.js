@@ -1,12 +1,14 @@
 import React from 'react'
 import Transaction from '../atoms/Transaction';
 
-const TransactionList = () => {
+const TransactionList = ({ transactions }) => {
+
   return (
   <>
-    <div className='transaction'><Transaction name='Cash' amount='10' /></div>
-    <div className='transaction'><Transaction name='Cash' amount='10' /></div>
-    <div className='transaction'><Transaction name='Cash' amount='10' /></div>
+    <ul className='transaction'>
+      {transactions.map(transaction => <Transaction key={transaction.id} transaction={transaction} /> )}
+    </ul>
+
   </>
   )
 }

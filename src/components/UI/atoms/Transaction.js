@@ -1,10 +1,8 @@
 import React from 'react'
 
-const Transaction = ({ name, amount }) => {
+const Transaction = ({ transaction }) => {
   return (
-      <div>
-        <p>{name}<span>{amount}</span></p>
-      </div>
+    <li>{transaction.text} <span>{transaction.amount < 0 ? '-':'+'}${Math.abs(transaction.amount)}</span></li>
     
   )
 }
