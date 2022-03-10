@@ -4,6 +4,7 @@ import MainHeader from './components/UI/atoms/MainHeader';
 import Balance from './components/UI/atoms/Balance'
 import IncomeExpense from './components/UI/molecules/IncomeExpense';
 import TransactionList from './components/UI/molecules/TransactionList';
+import AddTransactionForm from './components/templates/AddTransactionForm';
 
 function App() {
   return (
@@ -13,10 +14,10 @@ function App() {
         <Balance state='0.00' />
         <IncomeExpense />
       </div>
-      <div>
-        <h3>History</h3>
-        <TransactionList />
-      </div>
+      <h3>History</h3>
+      <TransactionList />
+      <h3>Add a new transaction</h3>
+      <AddTransactionForm />
     </div>
   );
 }
