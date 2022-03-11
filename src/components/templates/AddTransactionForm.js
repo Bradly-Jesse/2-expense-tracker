@@ -1,17 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { GlobalContext } from '../../context/GlobalState'
 
 const AddTransactionForm = () => {
-  const [ state, setState ] = useState({name: '', amount: ''})
+  const [ state, setState ] = useState({text: '', amount: 0})
+  const { addTransaction } = useContext(GlobalContext);
+
+  const onSubmit = e => {
+    e.preventDefault();
+    const newTransaction = {
+      id: Date.now(),
+      text: state.text,
+      amount: +state.amount
+    }
+    addTransaction(newTransaction)
+    setState({text: '', amount: 0})
+  }
 
   const changeHandler = (e) => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
   return (
-    <form>
+    <form onSubmit={onSubmit}>
         <div>
-            <label htmlFor="name">Name</label>
-            <input id='name' name='name' type='text' value={state.name} onChange={changeHandler} placeholder='Enter a name...' />
+            <label htmlFor="text">Name</label>
+            <input id='text' name='text' type='text' value={state.text} onChange={changeHandler} placeholder='Enter a name...' />
         </div>
         <div>
             <label htmlFor="amount">Amount</label>
