@@ -1,7 +1,9 @@
-import React from 'react'
-import Transaction from '../atoms/Transaction';
+import React, { useContext } from 'react'
+import Transaction from '../atoms/Transaction'
+import { GlobalContext } from '../../../context/GlobalState';
 
-const TransactionList = ({ transactions }) => {
+const TransactionList = () => {
+  const { transactions } = useContext(GlobalContext);
 
   return (
   <>

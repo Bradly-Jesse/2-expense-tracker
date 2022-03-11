@@ -15,16 +15,20 @@ function App() {
 
   const amounts = transactions.map(transaction => transaction.amount);
   const balance = amounts.reduce((currentValue, nextValue) => currentValue += nextValue, 0).toFixed(2)
+  const income = amounts.filter(item => item >= 0).reduce((firstValue, secondValue) => firstValue + secondValue, 0);
+  const expense = amounts.filter(item => item < 0).reduce((firstValue, secondValue) => firstValue + secondValue, 0) * -1;
+
+  
 
   return (
     <GlobalProvider className="App">
       <MainHeader string='Expense Tracker' />
       <div className="balance-container">
         <Balance state={balance} />
-        <IncomeExpense />
+        <IncomeExpense income={income} expense={expense} />
       </div>
       <h3>History</h3>
-      <TransactionList transactions={transactions}/>
+      <TransactionList />
       <h3>Add a new transaction</h3>
       <AddTransactionForm />
     </GlobalProvider>
